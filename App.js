@@ -1,28 +1,48 @@
-// import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { TouchableOpacity,  StyleSheet, Image, Text, View , StatusBar, Linking} from 'react-native';
 
 export default function App() {
-  const handleLinkPress = () => {
-    Linking.openURL('https://www.instagram.com/mayurmudoi'); // Open the provided URL
+
+  const handleLinkPress1 = () => {
+    Linking.openURL('https://www.instagram.com/mayurmudoi'); 
   };
+  const handleLinkPress2 = () => {
+    Linking.openURL('https://www.linkedin.com/in/mayurmudoi/');
+  };
+  const handleLinkPress3 = () => {
+    Linking.openURL('https://dribbble.com/mayurmudoi'); 
+  };
+  const handleLinkPress4 = () => {
+    Linking.openURL('https://github.com/mayurmudoi'); 
+  };
+
   return (
     <View style={styles.container}>
-      <View style={{flexDirection:'row',alignItems:'center'}}>
-        <Image source={require('./assets/images/profile.jpeg')} style={styles.profileImage}/>
-      <View style={{margin:20, justifyContent:'center', alignItems:'center'}}>
-        <Text style={{fontSize:30, fontWeight:500}}>MAYUR MUDOI</Text>
-        <Text style={{fontSize:20,fontWeight:500}}>21 . TU</Text>
+      <View style={styles.headItems}>
+        <Image 
+          source={require('./assets/images/profile.jpeg')}
+          style={styles.profileImage}/>
+        <Text style={styles.nameText}>
+          MAYUR MUDOI
+        </Text>
+        <Text style={styles.bioText}>
+          Learning React Native!
+        </Text>
       </View>
+      <View style={styles.bottomItems}>
+        <TouchableOpacity onPress={handleLinkPress1} style={styles.button}>
+          <Text style={styles.buttonText}>Instagram</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={handleLinkPress2} style={styles.button}>
+          <Text style={styles.buttonText}>LinkedIn</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={handleLinkPress3} style={styles.button}>
+          <Text style={styles.buttonText}>Dribbble</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={handleLinkPress4} style={styles.button}>
+          <Text style={styles.buttonText}>Github</Text>
+        </TouchableOpacity>
       </View>
-      <View style={{flex:1,justifyContent:'center', alignItems:'center'}}>
-        <TouchableOpacity onPress={handleLinkPress} style={styles.button}><Text>Instagram</Text></TouchableOpacity>
-        <TouchableOpacity style={styles.button}><Text>LinkedIn</Text></TouchableOpacity>
-        <TouchableOpacity style={styles.button}><Text>Dribble</Text></TouchableOpacity>
-        <TouchableOpacity style={styles.button}><Text>Github</Text></TouchableOpacity>
-      </View>
-      
-
       <StatusBar style="auto" />
     </View>
   );
@@ -31,9 +51,12 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFE7CE',
-    // alignItems: 'center',
-    // justifyContent: 'center',
+    backgroundColor: '#ffffff',
+  },
+  headItems:{
+    margin:20, 
+    justifyContent:'center',
+    alignItems:'center'
   },
   profileImage:{
     height:100,
@@ -42,6 +65,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     margin:20,
+  },
+  nameText:{
+    fontSize:30, 
+    fontWeight:500,
+    marginVertical:5
+  },
+  bioText:{
+    fontSize:18,
+    fontWeight:300
+  },
+  bottomItems:{
+    flex:1,
+    alignItems:'center',
+    marginTop:60
   },
   button:{
     backgroundColor: 'lightgray',
@@ -52,5 +89,9 @@ const styles = StyleSheet.create({
     height:40,
     justifyContent:'center',
     alignItems:'center',
+  },
+  buttonText:{
+    fontSize:15,
+    fontWeight:400
   }
 });
