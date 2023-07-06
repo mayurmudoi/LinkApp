@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
   buttonText:{
     fontSize:15,
     letterSpacing:2,
-    fontWeight:400
+    fontWeight:400,
   },
   buttonDarkBackground: {
     borderColor:'lightgray',
