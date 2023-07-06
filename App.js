@@ -1,7 +1,17 @@
-import React from 'react';
-import { TouchableOpacity,  StyleSheet, Image, Text, View , StatusBar, Linking} from 'react-native';
+import React , {useState} from 'react';
+import { TouchableOpacity, useColorScheme, StyleSheet, Image, Text, View , StatusBar, Linking} from 'react-native';
 
 export default function App() {
+  const colorScheme = useColorScheme();
+  const [isDarkMode, setIsDarkMode] = useState(colorScheme === 'dark');
+
+  const handleToggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+  const buttonbackgroundcolor = isDarkMode ? styles.buttonDarkBackground : styles.buttonLightBackground;
+  const backgroundColor = isDarkMode ? styles.darkBackground : styles.lightBackground;
+  const textColor = isDarkMode ? styles.lightText : styles.darkText;
+  
 
   const handleLinkPress1 = () => {
     Linking.openURL('https://www.instagram.com/mayurmudoi'); 
@@ -17,30 +27,33 @@ export default function App() {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, backgroundColor]}>
       <View style={styles.headItems}>
         <Image 
           source={require('./assets/images/profile.jpeg')}
           style={styles.profileImage}/>
-        <Text style={styles.nameText}>
+        <Text style={[styles.nameText, textColor]}>
           MAYUR MUDOI
         </Text>
-        <Text style={styles.bioText}>
+        <Text style={[styles.bioText, textColor]}>
           Learning React Native!
         </Text>
       </View>
       <View style={styles.bottomItems}>
-        <TouchableOpacity onPress={handleLinkPress1} style={styles.button}>
-          <Text style={styles.buttonText}>Instagram</Text>
+        <TouchableOpacity onPress={handleLinkPress1} style={[styles.button, buttonbackgroundcolor]}>
+          <Text style={[styles.buttonText, textColor]}>Instagram</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={handleLinkPress2} style={styles.button}>
-          <Text style={styles.buttonText}>LinkedIn</Text>
+        <TouchableOpacity onPress={handleLinkPress2} style={[styles.button, buttonbackgroundcolor]}>
+          <Text style={[styles.buttonText, textColor]}>LinkedIn</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={handleLinkPress3} style={styles.button}>
-          <Text style={styles.buttonText}>Dribbble</Text>
+        <TouchableOpacity onPress={handleLinkPress3} style={[styles.button, buttonbackgroundcolor]}>
+          <Text style={[styles.buttonText, textColor]}>Dribbble</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={handleLinkPress4} style={styles.button}>
-          <Text style={styles.buttonText}>Github</Text>
+        <TouchableOpacity onPress={handleLinkPress4} style={[styles.button, buttonbackgroundcolor]}>
+          <Text style={[styles.buttonText, textColor]}>Github</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={handleToggleDarkMode} style={[styles.button, buttonbackgroundcolor]}>
+          <Text style={[styles.buttonText, textColor]}>Toggle Dark Mode</Text>
         </TouchableOpacity>
       </View>
       <StatusBar style="auto" />
@@ -51,7 +64,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
   },
   headItems:{
     margin:20, 
@@ -81,7 +93,6 @@ const styles = StyleSheet.create({
     marginTop:60
   },
   button:{
-    backgroundColor: 'lightgray',
     padding: 10,
     borderRadius: 5,
     marginVertical: 10,
@@ -93,5 +104,25 @@ const styles = StyleSheet.create({
   buttonText:{
     fontSize:15,
     fontWeight:400
-  }
+  },
+  buttonDarkBackground: {
+    borderColor:'lightgray',
+    borderWidth:1
+  },
+  buttonLightBackground: {
+    borderColor:'#111',
+    borderWidth:1
+  },
+  darkBackground: {
+    backgroundColor: '#111',
+  },
+  lightBackground: {
+    backgroundColor: '#f5f5f5',
+  },
+  darkText: {
+    color: '#111',
+  },
+  lightText: {
+    color: '#f5f5f5',
+  },
 });
