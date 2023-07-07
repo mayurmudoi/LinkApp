@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
     alignItems:'flex-end',
     flexDirection:'row',
     justifyContent:'flex-end',
+    // backgroundColor:'red'
   },
   lightApp: {
     backgroundColor: '#ffffff',
@@ -27,6 +28,10 @@ const styles = StyleSheet.create({
   icon: {
     width: 30,
     height: 30,
+  },
+  previewIcon: {
+    width: 27,
+    height: 27,
   },
   headItems:{
     marginRight:20,
