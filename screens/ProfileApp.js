@@ -16,10 +16,7 @@ const ProfileApp = ({ isDarkMode }) => {
   ? styles.lightText 
   : styles.darkText;
 
-  const iconImage = isDarkMode
-  ? require('../assets/images/darkmode.png')
-  : require('../assets/images/lightmode.png');
-
+  
   const handleLinkPress1 = () => {
     Linking.openURL('https://www.instagram.com/mayur.mudoi'); 
   };

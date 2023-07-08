@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
+  //styles for Profile App
   container: {
     flex: 1,
   },
@@ -9,7 +10,7 @@ const styles = StyleSheet.create({
     alignItems:'flex-end',
     flexDirection:'row',
     justifyContent:'flex-end',
-    // backgroundColor:'red'
+    // backgroundColor:'lightblue'
   },
   lightApp: {
     backgroundColor: '#ffffff',
@@ -104,6 +105,131 @@ const styles = StyleSheet.create({
   lightText: {
     color: '#f5f5f5',
   },
+  // styles for StartApp
+  appContainer: {
+    flex: 1,
+    justifyContent: 'flex-end', // Align content to the bottom
+    alignItems: 'center', // Align content to the left
+    margin: 20,
+    // backgroundColor:'red'
+  },
+  textContainer:{
+    // backgroundColor:'lightblue',
+    marginBottom:100,
+    width:'100%',    
+    alignItems:'center'
+  },
+  appNameText:{
+    fontSize:40, 
+    fontWeight:500,
+    letterSpacing:4,
+    marginVertical:5,
+  },
+  appSubText:{
+    fontSize:15,
+    fontWeight:300,
+    letterSpacing:2,
+  },
+  appButton:{
+    padding: 10,
+    borderRadius: 5,
+    width:'80%',
+    height:46,
+    justifyContent:'center',
+    alignItems:'center',
+    borderWidth:1,
+    borderColor:'lightgray',
+    margin:30,
+  },
+  appButtonText:{
+    fontSize:20,
+    letterSpacing:2,
+    fontWeight:500,
+  },
+  // styles from CurrentWork
+  profileBox:{ 
+  margin:20, 
+  justifyContent:'center', 
+  alignItems:'center'
+},
+  editBox:{ 
+  margin:20, 
+  padding:10,
+  borderRadius:10,
+  borderColor:'lightgray'
+},
+  innerEditBox:{
+  borderRadius:10,
+  borderWidth:1,
+  margin:5, 
+  borderColor:'lightgray'
+},
+  textInputStyle:{ 
+  fontSize: 15, 
+  color: 'black' , 
+  marginLeft:10, 
+  marginBottom:2
+},
+  linkButton:{
+  padding: 10,
+  borderRadius: 20,
+  marginTop: 10,
+  marginBottom: 15,
+  width:'80%',
+  height:40,
+  justifyContent:'center',
+  alignItems:'center',
+  borderWidth:1,
+  borderColor:'lightgray'
+},
+  editBoxHeader:{
+  fontSize:17, 
+  fontWeight:500, 
+  letterSpacing:1, 
+  marginLeft:10, 
+  marginTop:5,
+},
+  saveButton:{ 
+  alignItems:'center',
+  marginTop:30
+},
+
+modalContainer: {
+  flex: 1,
+  justifyContent: 'center',
+  alignItems: 'center',
+},
+modalContent: {
+  backgroundColor: 'white',
+  padding: 20,
+  borderRadius: 10,
+  alignItems: 'center',
+},
+modalHeader: {
+  fontSize: 18,
+  fontWeight: 'bold',
+  marginBottom: 10,
+},
+modalTextInput: {
+  width: '100%',
+  height: 40,
+  borderWidth: 1,
+  borderColor: 'gray',
+  marginBottom: 10,
+  paddingHorizontal: 10,
+},
+modalButton: {
+  backgroundColor: 'lightblue',
+  paddingVertical: 10,
+  paddingHorizontal: 20,
+  borderRadius: 5,
+  marginBottom: 10,
+},
+modalButtonText: {
+  color: 'white',
+  fontWeight: 'bold',
+  textAlign: 'center',
+},
 });
 
 export default styles;
