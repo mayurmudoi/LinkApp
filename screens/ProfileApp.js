@@ -16,7 +16,6 @@ const ProfileApp = ({ isDarkMode }) => {
   ? styles.lightText 
   : styles.darkText;
 
-  
   const handleLinkPress1 = () => {
     Linking.openURL('https://www.instagram.com/mayur.mudoi'); 
   };

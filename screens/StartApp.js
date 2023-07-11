@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '../assets/style/profileStyles';
 import { TouchableOpacity, Text, View , StatusBar} from 'react-native';
 
-export default function App({navigation}) {
+export default function StartApp({navigation}) {
 
 const handleStartButtonPress = () => {
     navigation.navigate('PreviewApp');
