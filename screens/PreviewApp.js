@@ -93,7 +93,7 @@ export default function PreviewApp() {
           </TouchableOpacity>
         </View>
         {isProfileAppOpen && (
-          <ProfileApp isDarkMode={isDarkMode} handleToggleDarkMode={handleToggleDarkMode} />
+          <ProfileApp name={name} bio={bio} isDarkMode={isDarkMode} handleToggleDarkMode={handleToggleDarkMode} />
         )} 
         {!isProfileAppOpen && (
           <View style={styles.container}>

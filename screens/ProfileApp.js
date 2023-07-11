@@ -2,7 +2,7 @@ import React , {useState} from 'react';
 import styles from '../assets/style/profileStyles';
 import { TouchableOpacity, useColorScheme, Image, Text, View , StatusBar, Linking, ScrollView} from 'react-native';
 
-const ProfileApp = ({ isDarkMode }) => {
+const ProfileApp = ({ isDarkMode, name, bio }) => {
   
   const buttonbackgroundcolor = isDarkMode 
   ? styles.buttonDarkBackground 
@@ -37,10 +37,10 @@ const ProfileApp = ({ isDarkMode }) => {
             source={require('../assets/images/profile.jpeg')}
             style={styles.profileImage}/>
           <Text style={[styles.nameText, textColor]}>
-            MAYUR MUDOI
+            {name}
           </Text>
           <View style={styles.biobox}><Text style={[styles.bioText, textColor]}>
-            Learning React Native!
+            {bio}
           </Text></View>
         </View>
         <View style={styles.bottomItems}>
