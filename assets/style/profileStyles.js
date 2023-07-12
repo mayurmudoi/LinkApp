@@ -110,11 +110,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-end', // Align content to the bottom
     alignItems: 'center', // Align content to the left
-    margin: 20,
-    // backgroundColor:'red'
+    // margin: 20,
+    backgroundColor:'#111'
   },
   textContainer:{
-    // backgroundColor:'lightblue',
     marginBottom:100,
     width:'100%',    
     alignItems:'center'
@@ -124,11 +123,13 @@ const styles = StyleSheet.create({
     fontWeight:500,
     letterSpacing:4,
     marginVertical:5,
+    color: '#f5f5f5',
   },
   appSubText:{
     fontSize:15,
     fontWeight:300,
     letterSpacing:2,
+    color: '#f5f5f5',
   },
   appButton:{
     padding: 10,
@@ -145,6 +146,7 @@ const styles = StyleSheet.create({
     fontSize:20,
     letterSpacing:2,
     fontWeight:500,
+    color: '#f5f5f5',
   },
   // styles from CurrentWork
   profileBox:{ 
@@ -162,7 +164,7 @@ const styles = StyleSheet.create({
   borderRadius:10,
   borderWidth:1,
   margin:5, 
-  borderColor:'lightgray'
+  borderColor:'black'
 },
   textInputStyle:{ 
   fontSize: 15, 

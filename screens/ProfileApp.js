@@ -5,16 +5,16 @@ import { TouchableOpacity, useColorScheme, Image, Text, View , StatusBar, Linkin
 const ProfileApp = ({ isDarkMode, name, bio }) => {
   
   const buttonbackgroundcolor = isDarkMode 
-  ? styles.buttonDarkBackground 
-  : styles.buttonLightBackground;
+  ? styles.buttonLightBackground 
+  : styles.buttonDarkBackground;
   
   const backgroundColor = isDarkMode 
-  ? styles.darkBackground 
-  : styles.lightBackground;
-  
+  ? styles.lightBackground 
+  : styles.darkBackground;
+
   const textColor = isDarkMode 
-  ? styles.lightText 
-  : styles.darkText;
+  ? styles.darkText
+  : styles.lightText;
 
   const handleLinkPress1 = () => {
     Linking.openURL('https://www.instagram.com/mayur.mudoi'); 

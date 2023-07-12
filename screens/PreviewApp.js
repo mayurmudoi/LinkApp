@@ -54,25 +54,35 @@ export default function PreviewApp() {
   };
   
   const buttonbackgroundcolor = isDarkMode 
-  ? styles.buttonDarkBackground 
-  : styles.buttonLightBackground;
+  ? styles.buttonLightBackground 
+  : styles.buttonDarkBackground;
   
   const backgroundColor = isDarkMode 
-  ? styles.darkBackground 
-  : styles.lightBackground;
+  ? styles.lightBackground 
+  : styles.darkBackground;
+
+  const textColor = isDarkMode 
+  ? styles.darkText
+  : styles.lightText;
+
+  const innerTextColor = isDarkMode 
+  ? styles.darkText
+  : styles.lightText;
+
+
 
   const iconImage = isDarkMode
-  ? require('../assets/images/darkmode.png')
-  : require('../assets/images/lightmode.png');
+  ? require('../assets/images/DarkModeB.png')
+  : require('../assets/images/LightModeW.png');
 
   const [isPreviewClosed, setIsPreviewClosed] = useState(true);
   const previewIconImage = isDarkMode
     ? isPreviewClosed
-      ? require('../assets/images/previewlightmodeClosed.png')
-      : require('../assets/images/previewlightmode.png')
+      ? require('../assets/images/previewdarkmodeClosed.png')
+      : require('../assets/images/previewdarkmode.png')
     : isPreviewClosed
-    ? require('../assets/images/previewdarkmodeClosed.png')
-    : require('../assets/images/previewdarkmode.png');
+    ? require('../assets/images/previewlightmodeClosed.png')
+    : require('../assets/images/previewlightmode.png');
 
   const handlePreviewButtonPress = () => {
     setIsProfileAppOpen(!isProfileAppOpen);
@@ -98,40 +108,40 @@ export default function PreviewApp() {
         {!isProfileAppOpen && (
           <View style={styles.container}>
             <View style={styles.profileBox}>
-              <Text style={styles.nameText}>Profile</Text>
-              <Text style={styles.appSubText}>Customize your LinkLibrary profile.</Text> 
+              <Text style={[styles.nameText,textColor]}>Profile</Text>
+              <Text style={[styles.appSubText, textColor]}>Customize your LinkLibrary profile.</Text> 
             </View>
             <View style={styles.editBox}>
-              <View style={styles.innerEditBox}>
-                <Text style={styles.editBoxHeader}>Name</Text>
+              <View style={[styles.innerEditBox,buttonbackgroundcolor]}>
+                <Text style={[styles.editBoxHeader, textColor]}>Name</Text>
                 <TextInput
                   value={name}
-                  style={styles.textInputStyle}
+                  style={[styles.textInputStyle,innerTextColor]}
                   placeholder="+ Your name"
                   onChangeText={handleNameChange}
                 />
               </View>
-              <View style={styles.innerEditBox}>
-                <Text style={styles.editBoxHeader}>Bio</Text>
+              <View style={[styles.innerEditBox,buttonbackgroundcolor]}>
+                <Text style={[styles.editBoxHeader,textColor]}>Bio</Text>
                 <TextInput
                   value={bio}
-                  style={styles.textInputStyle}
+                  style={[styles.textInputStyle,innerTextColor]}
                   placeholder="+ Write bio"
                   onChangeText={handleBioChange}
                 />
               </View>
-              <View  style={styles.innerEditBox}>
-                <Text style={styles.editBoxHeader}>Link</Text>
+              <View  style={[styles.innerEditBox,buttonbackgroundcolor]}>
+                <Text style={[styles.editBoxHeader,textColor]}>Link</Text>
                 <View style={{alignItems:'center'}}>
-                  <TouchableOpacity style={styles.linkButton}>
-                    <Text style={styles.buttonText}>+ Add Link</Text>
+                  <TouchableOpacity style={[styles.linkButton, buttonbackgroundcolor]}>
+                    <Text style={[styles.buttonText,textColor]}>+ Add Link</Text>
                   </TouchableOpacity>
                 </View>
               </View>
             </View>
             <View style={styles.saveButton}>
-              <TouchableOpacity onPress={saveData}style={styles.button}>
-                <Text style={styles.buttonText}>Save Profile</Text>
+              <TouchableOpacity onPress={saveData}style={[styles.button,buttonbackgroundcolor]}>
+                <Text style={[styles.buttonText, textColor]}>Save Profile</Text>
               </TouchableOpacity>
             </View>
           </View>
